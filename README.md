@@ -1,6 +1,10 @@
 # flex-grid-styl
 grid based on flex-box, 100% custom
 
+## Installation
+
+    bower install --save flex-grid-styl
+
 ## Usage
 
 ### Settings
@@ -64,5 +68,8 @@ cols(many, from, suffix)
       *width: 24.969%;
     }
 
+##### Try
 
+    for num in (1..12)
+    	cols(num)
 
