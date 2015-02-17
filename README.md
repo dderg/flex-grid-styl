@@ -18,8 +18,13 @@ theese are defaults, if you want to change them just add any of theese before re
 ### Include grid
     @require "bower_components/flex-grid-styl/grid"
 
+### Basic grid
+builds grid like in bootstrap or foundation
+
+    buildBasicGrid()
+
 ### Call the mixin
-cols(many, from, suffix)
+    cols(many, from, suffix)
 
 #### Examples
 ##### Simple
