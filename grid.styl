@@ -20,8 +20,9 @@ setWidth(classname, width)
     for pair in existing
         if width == pair[1]
             exists = true
-            .{classname}
-                @extends .{pair[0]}
+            unless classname == pair[0]
+                .{classname}
+                    @extends .{pair[0]}
     pair = classname, width
     unless exists
         .{classname}
