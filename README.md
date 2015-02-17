@@ -1,6 +1,10 @@
 # flex-grid-styl
 grid based on flex-box, 100% custom
 
+## Installation
+
+    bower install --save flex-grid-styl
+
 ## Usage
 
 ### Settings
