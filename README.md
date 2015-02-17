@@ -68,5 +68,8 @@ cols(many, from, suffix)
       *width: 24.969%;
     }
 
+##### Try
 
+    for num in (1..12)
+    	cols(num)
 
