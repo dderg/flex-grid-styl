@@ -3,25 +3,35 @@ grid based on flex-box, 100% custom
 
 ## Installation
 
-    bower install --save flex-grid-styl
+```sh
+bower install --save flex-grid-styl
+```
 
 ## Usage
 
 ### Settings
 theese are defaults, if you want to change them just add any of theese before requiring the grid
-    colsclassname = "cols"
-    rowclassname = "row"
-    default-cols = 12
-    maxWidth = 1024px
-    padding = 15px
+
+``` stylus
+colsclassname = "cols"
+rowclassname = "row"
+default-cols = 12
+maxWidth = 1024px
+padding = 15px
+```
 
 ### Include grid
-    @require "bower_components/flex-grid-styl/grid"
+
+``` stylus
+@require "bower_components/flex-grid-styl/grid"
+```
 
 ### Basic grid
 builds grid like in bootstrap or foundation
 
-    buildBasicGrid()
+``` stylus
+buildBasicGrid()
+```
 
 ### Call the mixin
     cols(many, from, suffix)
@@ -30,51 +40,69 @@ builds grid like in bootstrap or foundation
 ##### Simple
 ###### From default amount of total cols
 
-    cols(1)
+``` stylus
+cols(1)
+```
     
 ######Yields:
 
-    .cols-1 {
-      width: 8.3333%;
-      *width: 8.3023%;
-    }
+``` css
+.cols-1 {
+  width: 8.3333%;
+  *width: 8.3023%;
+}
+```
 
 ##### Custom amount of total cols
 
-    cols(1, 5)
+``` stylus
+cols(1, 5)
+```
+
 ###### Yields:
 
-    .cols-1-5 {
-      width: 20%;
-      *width: 19.969%;
-    }
+``` css
+.cols-1-5 {
+  width: 20%;
+  *width: 19.969%;
+}
+```
 
 ##### Custom suffix
 
-    cols(1, 5, "sm")
+``` stylus
+cols(1, 5, "sm")
+```
 
 ###### Yields:
 
-    .cols-sm-1-5 {
-      width: 20%;
-      *width: 19.969%;
-    }
+``` css
+.cols-sm-1-5 {
+  width: 20%;
+  *width: 19.969%;
+}
+```
   
 ##### No dublicated values created
   
-    cols(1,4)
-    cols(3,12)
-    
+``` stylus  
+cols(1,4)
+cols(3,12)
+```
+
 ###### Yields:
 
-    .cols-1-4,
-    .cols-3-12 {
-      width: 25%;
-      *width: 24.969%;
-    }
+``` css
+.cols-1-4,
+.cols-3-12 {
+  width: 25%;
+  *width: 24.969%;
+}
+```
 
 ##### Try
 
-    for num in (1..12)
-    	cols(num)
-
+``` stylus
+for num in (1..12)
+	cols(num)
+```
