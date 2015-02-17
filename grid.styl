@@ -14,6 +14,7 @@ padding ?= 15px
 
 
 existing = (1 -1),(2 -1) // did not find to init empty array with files
+
 setWidth(classname, width)
     exists = false
     for pair in existing
@@ -47,6 +48,11 @@ cols(amount, from = false, suffix = false)
     width = round((100% / from * amount),4)
     
     setWidth(classname, width)
+
+
+buildBasicGrid()
+    for num in (1..default-cols)
+        cols(num)
 
 
 /**
