@@ -56,7 +56,7 @@ cols(many, from, suffix)
     cols(1,4)
     cols(3,12)
     
-Yields:
+###### Yields:
 
     .cols-1-4,
     .cols-3-12 {
