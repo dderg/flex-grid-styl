@@ -30,6 +30,7 @@ padding = 15px
 builds grid like in bootstrap or foundation
 
 ``` stylus
+buildClasses()
 buildBasicGrid()
 ```
 
