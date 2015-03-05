@@ -14,14 +14,15 @@ padding ?= 10px
 
 existing = (1 -1),(2 -1) // did not find to init empty array with files
 
-setWidth(classname, width)
+setWidth(classname, width, extend = true)
     exists = false
-    for pair in existing
-        if width == pair[1]
-            exists = true
-            unless classname == pair[0]
-                .{classname}
-                    @extends .{pair[0]}
+    if extend
+        for pair in existing
+            if width == pair[1]
+                exists = true
+                unless classname == pair[0]
+                    .{classname}
+                        @extends .{pair[0]}
     pair = classname, width
     unless exists
         .{classname}
@@ -35,11 +36,13 @@ setWidth(classname, width)
 
 
 cols(amount, from = false, suffix = false)
+    extend = true
+    if from
+        amount = ""+amount+"-"+from
 
     if suffix
-        classname = colsclassname+"-"+suffix+"-"+amount+"-"+from
-    else if from
-        classname = colsclassname+"-"+amount+"-"+from
+        extend = false
+        classname = colsclassname+"-"+suffix+"-"+amount
     else
         classname = colsclassname+"-"+amount
 
@@ -47,12 +50,12 @@ cols(amount, from = false, suffix = false)
         from = default-cols
     width = round((100% / from * amount),4)
     
-    setWidth(classname, width)
+    setWidth(classname, width, extend)
 
 
-buildBasicGrid()
+buildBasicGrid(suffix = false)
     for num in (1..default-cols)
-        cols(num)
+        cols(num, false, suffix)
 
 
 buildClasses()
@@ -106,7 +109,7 @@ buildClasses()
     Resets the font family back to the OS/browser's default sans-serif font,
     this the same font stack that Normalize.css sets for the `body`.
     */
-    .{rowclassname} [class ^= \"{colsclassname}\"],
+    .{rowclassname} [class ^= {colsclassname}],
     .{colsclassname} {
         /* font-family: sans-serif; */
         display: inline-block;
@@ -121,7 +124,7 @@ buildClasses()
         max-width maxWidth
         margin 0 auto
     .{colsclassname},
-    .{rowclassname} [class ^= \"{colsclassname}\"]
+    .{rowclassname} [class ^= {colsclassname}]
         padding 0 padding
 
     .{rowclassname} .{rowclassname}

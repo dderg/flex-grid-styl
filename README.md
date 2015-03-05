@@ -39,6 +39,7 @@ buildBasicGrid()
 
 ### Call the mixin
     cols(many, from, suffix)
+    buildBasicGrid(suffix)
 
 #### Examples
 ##### Simple
@@ -72,18 +73,22 @@ cols(1, 5)
 }
 ```
 
-##### Custom suffix
+##### mobile
 
 ``` stylus
-cols(1, 5, "sm")
+@media screen and (max-width: 40em)
+    cols(1, false, "sm")
+    cols(1,5,"sm")
 ```
 
 ###### Yields:
 
 ``` css
-.cols-sm-1-5 {
-  width: 20%;
-  *width: 19.969%;
+@media screen and (max-width: 40em) {
+    .cols-sm-1 {
+      width: 8.3333%;
+      *width: 8.3023%;
+    }
 }
 ```
   
