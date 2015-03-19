@@ -59,6 +59,11 @@ buildBasicGrid(suffix = false)
 
 
 buildClasses()
+
+    .opera-only :-o-prefocus,
+    .{rowclassname} {
+        word-spacing: -0.43em;
+    }
     @require "../bower_components/normalize-styl/_normalize.styl"
     /**
      * Extra rules that grid adds on top of Normalize.css
@@ -89,21 +94,9 @@ buildClasses()
         *letter-spacing: normal; /* reset IE < 8 */
         *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
         text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-
-
-        display: -webkit-flex;
-        -webkit-flex-flow: row wrap;
-
-        /* IE10 uses display: flexbox */
-        display: -ms-flexbox;
-        -ms-flex-flow: row wrap;
+        display: flex;
     }
 
-
-    .opera-only :-o-prefocus,
-    .{rowclassname} {
-        word-spacing: -0.43em;
-    }
 
     /*
     Resets the font family back to the OS/browser's default sans-serif font,
