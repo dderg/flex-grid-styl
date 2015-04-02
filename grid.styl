@@ -95,7 +95,6 @@ buildClasses()
         *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
         text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
         display: flex;
-        flex-flow: row wrap;
     }
 
 
@@ -125,7 +124,18 @@ buildClasses()
         margin-left padding * -1
         margin-right padding * -1
 
-
+    .{rowclassname}
+        &_vertical
+            &_middle
+                height 100%
+                align-items center
+                &:after
+                    content ''
+                    display inline-block
+                    vertical-align middle
+                    height 100%
+                [class ^= {colsclassname}]
+                    vertical-align middle
     *,
     *:after,
     *:before
