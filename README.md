@@ -10,10 +10,10 @@ grid based on flex-box, 100% custom
 bower install --save flex-grid-styl
 ```
 
-## Usage
 
+## Setup
 ### Settings
-theese are defaults, if you want to change them just add any of theese before requiring the grid
+here are defaults, if you want to change them just add any of theese before requiring the grid
 
 ``` stylus
 colsclassname = "cols"
@@ -37,10 +37,46 @@ buildClasses()
 buildBasicGrid()
 ```
 
-### Call the mixin
-    cols(many, from, suffix)
-    buildBasicGrid(suffix)
+#### Mobile classes, call from media query
 
+``` stulus
+buildBasicGrid('sm')
+```
+
+## Usage
+
+``` jade
+.row
+    .cols-12
+    .cols-6
+    .cols-6
+```
+
+### Vertical Alignment
+
+``` jade
+.row.row_vertical_middle
+    .cols-4
+    .cols-4
+    .cols-4
+```
+
+
+## changelog
+
+### 1.3.0
+---
+* vertical alignment added
+
+### 1.2.6
+----
+* mozilla fix for flexbox
+
+
+<!-- ### Call the mixin
+    cols(many, from, suffix)
+    buildBasicGrid(suffix) -->
+<!-- 
 #### Examples
 ##### Simple
 ###### From default amount of total cols
@@ -115,3 +151,4 @@ cols(3,12)
 for num in (1..12)
 	cols(num)
 ```
+ -->
