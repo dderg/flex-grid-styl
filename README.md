@@ -64,6 +64,10 @@ buildBasicGrid('sm')
 
 ## changelog
 
+### 1.3.2
+---
+* now when row inside flex with column layout it doesn't breakes it's width
+
 ### 1.3.0
 ---
 * vertical alignment added
